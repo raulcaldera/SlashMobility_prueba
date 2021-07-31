@@ -35,3 +35,30 @@
 .profileContent {
   padding-top: 100px;
 }
+
+.input {
+  width: 50%;
+  padding: 1em;
+}
+
+.textarea {
+  display: block;
+  padding: 1em;
+}
+
+mat-radio-group {
+  padding: 1em;
+}
+
+mat-radio-button {
+  margin-left: 1em;
+}
+
+@media screen and (max-width: 767px) {
+  .input {
+    display: block;
+    width: 100%;
+    padding: 1em;
+  }
+  
+  }

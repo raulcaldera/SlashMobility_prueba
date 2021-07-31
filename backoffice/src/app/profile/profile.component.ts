@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -8,21 +8,52 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  profileForm: FormGroup;
 
-  profileForm = new FormGroup({
-    username: new FormControl(''),
-    email: new FormControl(''),
-    gender: new FormControl(''),
-    bio: new FormControl('')
-  });
+  formErrors = {
+    'username': '',
+    'email': ''
+  };
+
+  validationMessages = {
+    'username': {
+      'required':      'Username is required.',
+    },
+    'email': {
+      'required':      'Email is required.',
+      'email':         'Email not in valid format.'
+    },
+  };
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.profileForm = this.fb.group({
+      username: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      gender: [''],
+      bio: [''],
+      aliases: this.fb.array([
+        this.fb.control('')
+      ])
+    });
   }
 
   onSubmit() {
-    // TODO: Use EventEmitter with form value
-    console.warn(this.profileForm.value);
+    const form = this.profileForm;
+    for (const field in this.formErrors) {
+      if (this.formErrors.hasOwnProperty(field)) {
+        this.formErrors[field] = '';
+        const control = form.get(field);
+        if (control && !control.valid) {
+          const messages = this.validationMessages[field];
+          for (const key in control.errors) {
+            if (control.errors.hasOwnProperty(key)) {
+              this.formErrors[field] += messages[key] + ' ';
+            }
+          }
+        }
+      }
+    }
   }
-
 }
