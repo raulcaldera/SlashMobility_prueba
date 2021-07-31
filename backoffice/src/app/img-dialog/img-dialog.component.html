@@ -1,0 +1,6 @@
+<h2 mat-dialog-title>Pick a profile image</h2>
+<mat-dialog-actions>
+  <input mat-button type="file" name="avatar" [(ngModel)]="data.file" (change)="readFile($event)" required/>
+  <div *ngIf="!validFile">{{errorMsg}}</div>
+  <button mat-button [mat-dialog-close]="data.file" [disabled]="!validFile" required>Ok</button>
+</mat-dialog-actions>

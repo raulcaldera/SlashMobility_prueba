@@ -1,10 +1,11 @@
 <mat-card class="profile-card">
   <div mat-card-image class="backgroundImg">
-    <img  src="../../assets/profile_background.jpeg" alt="profile-background">
+    <img src="../../assets/profile_background.jpeg" alt="profile-background">
   </div>
-  <div class="profileImg">
-    <img  src="../../assets/profile_placeholder.png" alt="profile-placeholder">
+  <div *ngIf="!file" class="placeholder" (click)="openImgDialog()">
+    <img src="../../assets/profile_placeholder.png" alt="profile-placeholder">
   </div>
+  <app-avatar *ngIf="file" [avatar]="file"></app-avatar>
   <mat-card-content class="profileContent">
     <form novalidate [formGroup]="profileForm" (ngSubmit)="onSubmit()">
 

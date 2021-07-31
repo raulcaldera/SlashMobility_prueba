@@ -14,22 +14,27 @@
   width: 100%;
 }
 
-.profile-card .profileImg {
+.profile-card .placeholder {
   position: absolute;
   display: inline-block;
   border-radius: 50%;
   margin-top: -1em;
   left: 50%;
+  height: 150px;
+  width: 150px;
   transform: translate(-50%,-50%);
   background-color: white; 
+  cursor: pointer;
 }
 
-.profile-card .profileImg img {
-  height: 150px;
-	width: auto;
+.profile-card .placeholder img {
   padding: 5px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   display: block;
+  background: no-repeat center;
+  background-size: cover;
 }
 
 .profileContent {

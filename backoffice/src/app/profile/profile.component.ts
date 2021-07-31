@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ImgDialogComponent } from '../img-dialog/img-dialog.component';
 
 @Component({
   selector: 'app-profile',
@@ -17,15 +19,31 @@ export class ProfileComponent implements OnInit {
 
   validationMessages = {
     'username': {
-      'required':      'Username is required.',
+      'required': 'Username is required.',
     },
     'email': {
-      'required':      'Email is required.',
-      'email':         'Email not in valid format.'
+      'required': 'Email is required.',
+      'email': 'Email not in valid format.'
     },
   };
 
-  constructor(private fb: FormBuilder) { }
+  file: string;
+
+  constructor(
+    private fb: FormBuilder,
+    public imgDialog: MatDialog
+  ) {}
+
+  openImgDialog(): void {
+    const dialogRef = this.imgDialog.open(ImgDialogComponent, {
+      data: {file: this.file}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.file = result.replace("C:\\fakepath\\", "");
+      console.log(this.file);
+    });
+  }
 
   ngOnInit(): void {
     this.profileForm = this.fb.group({
@@ -37,6 +55,7 @@ export class ProfileComponent implements OnInit {
         this.fb.control('')
       ])
     });
+    this.file =  "";
   }
 
   onSubmit() {

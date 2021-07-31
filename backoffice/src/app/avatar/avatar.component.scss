@@ -1,0 +1,40 @@
+.editProfileImg {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  background-color: #005580;
+  border: none;
+  color: white;
+  height: 2.5em;
+  width: 2.5em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.editProfileImg[hidden] {
+  display: none;
+}
+
+.avatar {
+  position: absolute;
+  display: inline-block;
+  border-radius: 50%;
+  margin-top: -1em;
+  left: 50%;
+  height: 150px;
+  width: 150px;
+  transform: translate(-50%,-50%);
+  background-color: white; 
+}
+
+.avatar img {
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: block;
+  background: no-repeat center;
+  background-size: cover;
+}

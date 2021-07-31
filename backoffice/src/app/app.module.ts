@@ -9,12 +9,20 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatDialogModule } from '@angular/material/dialog';
+import { HeaderComponent } from './header/header.component';
+import { AvatarComponent } from './avatar/avatar.component';
+import { FormsModule } from '@angular/forms';
+import { ImgDialogComponent } from './img-dialog/img-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
     GeolocationComponent,
+    HeaderComponent,
+    AvatarComponent,
+    ImgDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +31,9 @@ import { MatRadioModule } from '@angular/material/radio';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDialogModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
