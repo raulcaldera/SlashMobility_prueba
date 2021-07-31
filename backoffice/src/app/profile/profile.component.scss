@@ -2,4 +2,36 @@
   box-sizing: border-box;
   width: 100%;
   display: inline-block;
+  
+}
+
+.profile-card .backgroundImg {
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.profile-card .backgroundImg img {
+  width: 100%;
+}
+
+.profile-card .profileImg {
+  position: absolute;
+  display: inline-block;
+  border-radius: 50%;
+  margin-top: -1em;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: white; 
+}
+
+.profile-card .profileImg img {
+  height: 150px;
+	width: auto;
+  padding: 5px;
+  border-radius: 50%;
+  display: block;
+}
+
+.profileContent {
+  padding-top: 100px;
 }

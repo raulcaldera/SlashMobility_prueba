@@ -1,3 +1,36 @@
 <mat-card class="profile-card">
-  <p>profile works!</p>
+  <div mat-card-image class="backgroundImg">
+    <img  src="../../assets/profile_background.jpeg" alt="profile-background">
+  </div>
+  <div class="profileImg">
+    <img  src="../../assets/profile_placeholder.png" alt="profile-placeholder">
+  </div>
+  <mat-card-content class="profileContent">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+      <mat-form-field appearance="fill">
+        <mat-label for="username">Username</mat-label>
+        <input matInput id="username" type="text" formControlName="username" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label for="email">Email</mat-label>
+        <input matInput id="email" type="text" formControlName="email" required>
+      </mat-form-field>
+
+      <label>Gender: </label>
+      <mat-radio-group formControlName="gender">
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Bio</mat-label>
+        <textarea matInput id="bio" type="textarea" formControlName="bio"></textarea>
+      </mat-form-field>
+
+      <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+
+    </form>
+  </mat-card-content>
 </mat-card>
