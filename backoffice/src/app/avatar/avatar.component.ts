@@ -29,7 +29,7 @@ export class AvatarComponent implements OnInit {
 
     dialogRef.componentInstance.params = {
       getResponse:(filename)=>{
-          this.avatar = filename;
+        this.avatar = filename;
       }
     }
   }

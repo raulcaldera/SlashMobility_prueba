@@ -35,6 +35,11 @@
   display: block;
   background: no-repeat center;
   background-size: cover;
+  transition: all  0.2s ease-in-out;
+}
+
+.profile-card .placeholder img:hover {
+  filter: brightness(70%);
 }
 
 .profileContent {
@@ -65,7 +70,13 @@ mat-radio-button {
   color: white;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  float: right;
+  transition: opacity  0.2s ease-in-out;
+  opacity: 1;
+}
+
+.btn:hover {
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 767px) {

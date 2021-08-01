@@ -1,3 +1,17 @@
 <mat-card class="geolocation-card">
-  <p>geolocation works!</p>
+  <google-map width="100%" [center]= "center">
+    <map-marker
+      #markerId="mapMarker"
+      *ngIf="positioned" 
+      [position]="center" 
+      [options]="options"
+      (mapClick)="openInfo(markerId)"
+    >
+    </map-marker>
+    <map-info-window>
+      <p><b>Latitude: </b>{{center.lat}}</p> 
+      <p><b>Longitude: </b>{{center.lng}}</p> 
+    </map-info-window>
+  </google-map>
+  <button class="btn" (click)="getLocation()">Get my location <i class="fa fa-map-marker"></i></button>
 </mat-card>

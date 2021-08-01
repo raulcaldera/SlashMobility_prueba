@@ -3,3 +3,19 @@
   width: 100%;
   display: inline-block;
 }
+
+.btn {
+  background-color: #005580;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  margin: 1em 0;
+  float: right;
+  transition: opacity  0.2s ease-in-out;
+  opacity: 1;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}

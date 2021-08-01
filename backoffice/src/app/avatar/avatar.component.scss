@@ -11,6 +11,11 @@
   text-decoration: none;
   display: inline-block;
   border-radius: 50%;
+  transition: all  0.2s ease-in-out;
+}
+
+.editProfileImg:hover {
+  transform: scale(1.25);
 }
 
 .editProfileImg[hidden] {

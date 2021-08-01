@@ -15,6 +15,7 @@ import { AvatarComponent } from './avatar/avatar.component';
 import { FormsModule } from '@angular/forms';
 import { ImgDialogComponent } from './img-dialog/img-dialog.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatRadioModule,
     MatDialogModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
