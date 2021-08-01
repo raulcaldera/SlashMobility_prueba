@@ -1,6 +1,6 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { ImgDialogComponent } from '../img-dialog/img-dialog.component';
 
 @Component({
@@ -39,10 +39,11 @@ export class ProfileComponent implements OnInit {
       data: {file: this.file}
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      this.file = result.replace("C:\\fakepath\\", "");
-      console.log(this.file);
-    });
+    dialogRef.componentInstance.params = {
+      getResponse:(filename)=>{
+          this.file = filename;
+      }
+    }
   }
 
   ngOnInit(): void {
@@ -55,7 +56,7 @@ export class ProfileComponent implements OnInit {
         this.fb.control('')
       ])
     });
-    this.file =  "";
+    this.file = "";
   }
 
   onSubmit() {

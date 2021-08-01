@@ -14,6 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import { AvatarComponent } from './avatar/avatar.component';
 import { FormsModule } from '@angular/forms';
 import { ImgDialogComponent } from './img-dialog/img-dialog.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ImgDialogComponent } from './img-dialog/img-dialog.component';
     MatInputModule,
     MatRadioModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

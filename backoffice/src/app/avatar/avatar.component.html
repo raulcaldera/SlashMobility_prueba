@@ -1,4 +1,4 @@
 <div class="avatar">
-  <img src="../../assets/{{avatar}}" alt="profile img">
-  <button class="editProfileImg"><i class="fa fa-pencil"></i></button>
+  <img [src]="sanitizeImageUrl()" alt="profile img">
+  <button class="editProfileImg" (click)="openImgDialog()"><i class="fa fa-pencil"></i></button>
 </div>

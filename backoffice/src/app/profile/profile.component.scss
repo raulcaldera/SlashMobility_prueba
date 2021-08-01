@@ -59,11 +59,19 @@ mat-radio-button {
   margin-left: 1em;
 }
 
+.btn {
+  background-color: #005580;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
 @media screen and (max-width: 767px) {
   .input {
     display: block;
     width: 100%;
     padding: 1em;
   }
-  
-  }
+}

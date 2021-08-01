@@ -1,6 +1,10 @@
-<h2 mat-dialog-title>Pick a profile image</h2>
-<mat-dialog-actions>
-  <input mat-button type="file" name="avatar" [(ngModel)]="data.file" (change)="readFile($event)" required/>
-  <div *ngIf="!validFile">{{errorMsg}}</div>
-  <button mat-button [mat-dialog-close]="data.file" [disabled]="!validFile" required>Ok</button>
-</mat-dialog-actions>
+<div class="container-fluid">
+  <form [formGroup]="fileUploadForm" (ngSubmit)="submit()">
+          <h6><span>Select Image File</span></h6>
+          <input type="file" class="custom-file-input" id="customFile" name="uploadedImage" 
+            (change)="readFile($event)" #UploadFileInput>
+          <label class="custom-file-label" for="customFile">{{fileInputLabel || 'Choose File'}}</label>
+          <p for="customFile" *ngIf="errorMsg">{{errorMsg}}</p>
+      <button [disabled]="!validFile" [mat-dialog-close]="data.file" class="btn btn-primary" type="submit">Upload</button>
+  </form>
+</div>
