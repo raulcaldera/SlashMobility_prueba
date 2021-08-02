@@ -21,7 +21,7 @@ export class ImgDialogComponent implements OnInit {
 
   @ViewChild('UploadFileInput', { static: false }) uploadFileInput: ElementRef;
   fileUploadForm: FormGroup;
-  fileInputLabel: string;
+  fileInputLabel: String;
 
   constructor(
     public dialogRef: MatDialogRef<ImgDialogComponent>,

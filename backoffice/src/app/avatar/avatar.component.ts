@@ -9,14 +9,17 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
   styleUrls: ['./avatar.component.scss']
 })
 export class AvatarComponent implements OnInit {
-  @Input() avatar: string;
+  @Input() avatar: String;
 
-  file: string;
+  file: String;
 
   constructor(
     public imgDialog: MatDialog,
     private sanitizer: DomSanitizer
   ) {}
+
+  ngOnInit(): void {
+  }
 
   sanitizeImageUrl(): SafeUrl {
     return this.sanitizer.bypassSecurityTrustUrl("http://localhost:3000/images/" + this.avatar);
@@ -33,8 +36,4 @@ export class AvatarComponent implements OnInit {
       }
     }
   }
-
-  ngOnInit(): void {
-  }
-
 }

@@ -7,7 +7,6 @@ import { MapInfoWindow, MapMarker, GoogleMap } from '@angular/google-maps'
   styleUrls: ['./geolocation.component.scss']
 })
 export class GeolocationComponent implements OnInit {
-
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap
   @ViewChild(MapInfoWindow, { static: false }) infoWindow: MapInfoWindow
   
@@ -23,7 +22,7 @@ export class GeolocationComponent implements OnInit {
     minZoom: 8,
   };
   
-  constructor() { }
+  constructor(){}
 
   ngOnInit(): void {
     if(!navigator.geolocation) {
